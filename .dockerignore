@@ -1,0 +1,23 @@
+.git
+.gitignore
+.github
+
+.dockerignore
+Dockerfile
+
+node_modules
+
+# IDEs, Developer tools
+.vscode
+.idea
+.loadpath
+.project
+*.sublime-project
+*.sublime-workspace
+.tags
+.bash_history
+nbproject/
+.DS_Store
+.*.sw?
+*~
+**.orig
