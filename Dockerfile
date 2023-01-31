@@ -12,6 +12,8 @@ RUN mkdir /app && \
 
 # modify service worker to add injection script
 RUN sed -i 's/\(injectScripts:\s*\[\)/\1"inject.js",/' /app/sw.js
+# workaround for https://github.com/webrecorder/wabac.js/issues/105
+RUN sed -i 's/if\s*(\s*!\s*\([a-zA-Z_]\+\)\(\.length)\s*return[^)]\+size of the file is not accessible\)/if(\1.canLoadOnDemand\&\&!\1\2/' /app/sw.js
 
 FROM nginx:mainline-alpine-slim AS runner
 
